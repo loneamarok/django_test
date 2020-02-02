@@ -1,0 +1,14 @@
+<h1>{{fulltext}} has {{count}} words</h1>
+<br>
+{{word_dict}}
+
+{% for word, count_word in word_list %}
+{{word}} : {{count_word}}
+<br>
+{% endfor %}
+
+<br>
+<a href="{% url 'hello' %}">Back </a>
+<br>
+<a href="{% url 'about' %}">About </a>
+
