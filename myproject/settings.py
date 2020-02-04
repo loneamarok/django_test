@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_google_maps',
     'job.apps.JobConfig',
     'blog.apps.BlogConfig',
     'apps.apps.AppsConfig',
+    'homepage.apps.HomepageConfig',
 ]
 
 MIDDLEWARE = [

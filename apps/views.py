@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import App
 # Create your views here.
 def apps_webpage(request):
-     return render(request, 'apps/app_webpage.html')
+    apps = App.objects
+    return render(request, 'apps/apps.html', {'apps': apps})

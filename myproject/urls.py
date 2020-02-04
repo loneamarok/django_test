@@ -20,6 +20,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 import job.views
+import homepage.views
 
 admin.site.site_header = 'XR App store Admin'
 admin.site.site_title = 'XR App Store'
@@ -30,8 +31,8 @@ urlpatterns = [
     path('count/', views.count, name="count"),
     path('hello/', views.hello, name="hello"),
     path('about/', views.about, name="about"),
-    path('', job.views.homepage, name="homepage"),
+    path('', homepage.views.homepage, name="homepage"),
+    path('topology', homepage.views.topology, name="topology"),
     path('blog/', include('blog.urls')),
     path('apps/', include('apps.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- 
