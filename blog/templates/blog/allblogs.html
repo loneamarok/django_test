@@ -54,42 +54,31 @@
     <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link active" href="#">Linkedin <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#">Resume</a>
-      <a class="nav-item nav-link" href="#">Blog</a>
+      <a class="nav-item nav-link active" href="#">Blog</a>
     </div>
   </div>
 </nav>
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>Hi, I Ram</h1>
-      <p class="lead text-muted">Me djangoing here for the first time with bootstrap.</p>
-      <p>
-        <a href="mailto:abcdram21@gmail.com" class="btn btn-primary my-2">Email</a>
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-        {% for job in jobs.all %}
+  <h1 class="text-center pt-3">Welcome to my Bolg</h1>
+  <br>
+  <br>
+  <h2>Latest post</h2>
+  <hr>
+  {% for blog in blogs.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{job.image.url}}">
+            <img class="card-img-top" src="{{blog.image.url}}">
             <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
+              <p class="card-text">{{blog.title}}</p>
             </div>
           </div>
         </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
+        <p>{{blog.body}}</p>
+  {% endfor %}
+</div>
 </main>
 
 <footer class="text-muted">

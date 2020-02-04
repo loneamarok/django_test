@@ -14,11 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import include
 from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 import job.views
+
+admin.site.site_header = 'XR App store Admin'
+admin.site.site_title = 'XR App Store'
+admin.site.index_title = 'Upload and Download apps'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +31,7 @@ urlpatterns = [
     path('hello/', views.hello, name="hello"),
     path('about/', views.about, name="about"),
     path('', job.views.homepage, name="homepage"),
+    path('blog/', include('blog.urls')),
+    path('apps/', include('apps.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  
